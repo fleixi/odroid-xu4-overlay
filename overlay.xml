@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories version="1.0">
+<repo priority="50" status="unofficial">
+	<name>odroid-xu4</name>
+	<description>Odroid Xu4 gentoo overlay</description>
+	<homepage>https://github.com/fleixi/odroid-xu4-overlay</homepage>
+	<owner>
+		<email>edoceo@gmail.com</email>
+		<name>Edoceo, Inc</name>
+	</owner>
+	<source type="git">git://github.com/fleixi/odroid-xu4-overlay.git</source>
+	<feed>https://github.com/fleixi/odroid-xu4-overlay/commits/master.atom</feed>
+</repo>
+</repositories>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <repositories version="1.0">
 <repo priority="50" status="unofficial">
-	<name>odroid-xu4</name>
+	<name>odroid_xu4</name>
 	<description>Odroid Xu4 gentoo overlay</description>
 	<homepage>https://github.com/fleixi/odroid-xu4-overlay</homepage>
 	<owner>

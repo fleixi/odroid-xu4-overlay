@@ -1,0 +1,11 @@
+--- a/src/backends/native/meta-renderer-native.c	2017-04-11 02:41:18.000000000 +0200
++++ b/src/backends/native/meta-renderer-native.c.patch	2017-05-20 20:40:06.738346974 +0200
+@@ -1852,7 +1852,7 @@
+   EGLDisplay egl_display;
+ 
+   if (!meta_egl_has_extensions (egl, EGL_NO_DISPLAY, NULL,
+-                                "EGL_MESA_platform_gbm",
++                                "EGL_KHR_platform_gbm",
+                                 NULL))
+     {
+       g_set_error (error, G_IO_ERROR,

@@ -1,0 +1,28 @@
+--- a/Makefile	2017-05-28 12:03:30.000000000 +0200
++++ b/Makefile	2017-05-28 11:59:32.000000000 +0200
+@@ -1,14 +1,25 @@
+ SHELL := /bin/bash
+ 
++INSTALL_PATH = ~/.local/share/gnome-shell/extensions
++INSTALL_NAME = hidetopbar@mathieu.bidon.ca
+ JS_FILES = {extension,convenience,intellihide,panelVisibilityManager,prefs}.js
+ 
+ .PHONY: clean all
+ 
+ all: hidetopbar.zip
+ 
++install: schemas
++	rm -rf $(INSTALL_PATH)/$(INSTALL_NAME)
++	mkdir -p $(INSTALL_PATH)/$(INSTALL_NAME)
++	cp -r --preserve=timestamps _build/* $(INSTALL_PATH)/$(INSTALL_NAME)
++	rm -rf _build
++
+ schemas:
+ 	mkdir ./schemas/
+ 	glib-compile-schemas --strict --targetdir=./schemas/ .
++	rm -rf _build
++	mkdir _build
++	cp -r --preserve=timestamps schemas $(JS_FILES) metadata.json README.md _build
+ 
+ hidetopbar.zip: schemas
+ 	zip hidetopbar.zip -r $(JS_FILES) metadata.json locale/*/*/*.mo schemas

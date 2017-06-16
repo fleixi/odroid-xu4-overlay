@@ -1,0 +1,11 @@
+--- a/plugins/media-keys/gsd-media-keys-manager.c
++++ b/plugins/media-keys/gsd-media-keys-manager.c
+@@ -108,7 +108,7 @@
+ #define TOUCHPAD_ENABLED_KEY "send-events"
+ #define HIGH_CONTRAST "HighContrast"
+ 
+-#define VOLUME_STEP 6           /* percents for one volume button press */
++#define VOLUME_STEP 3           /* percents for one volume button press */
+ #define MAX_VOLUME 65536.0
+ 
+ #define SYSTEMD_DBUS_NAME                       "org.freedesktop.login1"

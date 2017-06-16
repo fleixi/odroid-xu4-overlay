@@ -1,0 +1,19 @@
+--- a/xbmc/cores/AudioEngine/Sinks/AESinkPULSE.cpp
++++ b/xbmc/cores/AudioEngine/Sinks/AESinkPULSE.cpp
+@@ -928,14 +928,14 @@ void CAESinkPULSE::SetVolume(float volume)
+     }
+
+     pa_volume_t pavolume = per_cent_volume * PA_VOLUME_NORM;
+-    unsigned int sink_input_idx = pa_stream_get_index(m_Stream);
++    unsigned int sink_idx = pa_stream_get_device_index(m_Stream);
+
+     if ( pavolume <= 0 )
+       pa_cvolume_mute(&m_Volume, m_Channels);
+     else
+       pa_cvolume_set(&m_Volume, m_Channels, pavolume);
+
+-      pa_operation *op = pa_context_set_sink_input_volume(m_Context, sink_input_idx, &m_Volume, NULL, NULL);
++      pa_operation *op = pa_context_set_sink_volume_by_index(m_Context, sink_idx, &m_Volume, NULL, NULL);
+       if (op == NULL)
+         CLog::Log(LOGERROR, "PulseAudio: Failed to set volume");
+       else

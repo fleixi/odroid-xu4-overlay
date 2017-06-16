@@ -1,0 +1,16 @@
+[Unit]
+Description=OsCAM Server
+After=network.target
+Before=tvheadend.service
+
+[Service]
+User=oscam
+Group=oscam
+EnvironmentFile=/etc/conf.d/oscam
+ExecStart=/usr/bin/oscam $_OSCAM_OPTS
+PIDFile=/tmp/.oscam/oscam.pid
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+

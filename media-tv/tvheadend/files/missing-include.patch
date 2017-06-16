@@ -1,0 +1,10 @@
+--- a/src/wizard.c
++++ b/src/wizard.c
+@@ -27,6 +27,7 @@
+ #include "settings.h"
+ #include "input.h"
+ #include "input/mpegts/iptv/iptv_private.h"
++#include "input/mpegts/mpegts_dvb.h"
+ #include "service_mapper.h"
+ #include "wizard.h"
+ 

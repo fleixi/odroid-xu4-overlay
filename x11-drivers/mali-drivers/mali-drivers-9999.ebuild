@@ -30,6 +30,7 @@ src_install() {
 	doins "${FILESDIR}"/99-mali-drivers.rules
 
 	dodir /usr/lib/opengl/mali
+	dodir /usr/lib/opengl/mali/lib
 	dodir /usr/lib/pkgconfig
 	dodir /usr/include
 	emake DESTDIR="${D}" install

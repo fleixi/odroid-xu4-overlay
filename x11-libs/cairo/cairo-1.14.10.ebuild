@@ -74,7 +74,6 @@ PATCHES=(
 )
 
 pkg_setup() {
-	default
         append-ldflags -lgbm
 }
 
